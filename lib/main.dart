@@ -15,15 +15,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class Todo {
+  final String label;
+  bool completed;
+  Todo(this.label, this.completed);
+}
+
 class TodoList extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => TodoListState();
-}
-
-class Todo {
-  final String label;
-  bool isDone;
-  Todo(this.label, this.isDone);
 }
 
 class TodoListState extends State<TodoList> {
@@ -31,30 +31,18 @@ class TodoListState extends State<TodoList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('TODO')),
-      body: todos.length > 0
-          ? ListView.builder(
-              itemCount: todos.length,
-              itemBuilder: (context, index) => Row(
-                children: <Widget>[
-                  Checkbox(
-                      value: todos[index].isDone,
-                      onChanged: (value) => _toggleTodoItem(value, index)),
-                  Text(
-                    todos[index].label,
-                    style: TextStyle(
-                        decoration: todos[index].isDone
-                            ? TextDecoration.lineThrough
-                            : null),
-                  ),
-                ],
-              ),
-            )
-          : Padding(
-              child: Text(
-                  'There is nothing here yet. Start by adding some TODOs.'),
-              padding: EdgeInsets.all(16.0),
-            ),
+      appBar: AppBar(
+        title: Text('Todo'),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: todos.length > 0
+            ? ListView.builder(
+                itemCount: todos.length,
+                itemBuilder: _buildRow,
+              )
+            : Text('There is nothing here yet. Start by adding some Todos'),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () => _promptDialog(context),
@@ -62,6 +50,7 @@ class TodoListState extends State<TodoList> {
     );
   }
 
+  /// display a dialog that accepts text
   _promptDialog(BuildContext context) {
     String _todoLabel = '';
     return showDialog(
@@ -89,6 +78,21 @@ class TodoListState extends State<TodoList> {
         });
   }
 
-  _toggleTodoItem(bool value, int index) =>
-      setState(() => todos[index].isDone = value);
+  /// build a single row of the list
+  Widget _buildRow(context, index) => Row(
+        children: <Widget>[
+          Checkbox(
+              value: todos[index].completed,
+              onChanged: (value) => _changeTodo(index, value)),
+          Text(todos[index].label,
+              style: TextStyle(
+                  decoration: todos[index].completed
+                      ? TextDecoration.lineThrough
+                      : null))
+        ],
+      );
+
+  /// toggle the completed state of a todo item
+  _changeTodo(int index, bool value) =>
+      setState(() => todos[index].completed = value);
 }
