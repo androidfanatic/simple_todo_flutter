@@ -22,13 +22,18 @@ All in all, flutter is great tool to have in our arsenal as mobile developers in
 
 Flutter's official docs are really well written and include getting started guides for different OS platforms, API documentation, widget catalogue along with several cookbooks and codelabs that one can follow along to learn more about flutter.
 
-To get started with development, we will follow the official guide which is available here <a href="https://flutter.dev/docs/get-started/install" target="_blank">https://flutter.dev/docs/get-started/install</a>. Flutter requires flutter SDK as well as native build tools to be installed on the machine to begin development. To write apps, one may use Android Studios or vscode. or any text editor can be used with flutter's command line tools, but a good rule of thumb is to install Android studios because it offers better support for management of android SDK, build tools and virtual devices. It also includes several built-in tools such as the icons and assets editor.
+To get started with development, we will follow the official guide which is available here <a href="https://flutter.dev/docs/get-started/install" target="_blank">https://flutter.dev/docs/get-started/install</a>. Flutter requires flutter SDK as well as native build tools to be installed on the machine to begin development. To write apps, one may use Android Studios or VS Code. or any text editor can be used with flutter's command line tools, but a good rule of thumb is to install Android studios because it offers better support for management of android SDK, build tools and virtual devices. It also includes several built-in tools such as the icons and assets editor.
 
-Once done with setup, we will start by creating a project. Open vscode and create a new flutter project:
+Once done with setup, we will start by creating a project. Open VS Code and create a new flutter project:
 
 <img src="new_project_flutter.png" />
 
 We should see the main file `main.dart` with some sample code (the counter application). We will start editing this file to create our TODO app.
+
+Some of the features we will add to our TODO app:
+  - Display a list of todo items
+  - Mark todo items as completed
+  - Add new item to the list
 
 Let's start by creating a widget to hold our list of todo items. This is going to be a StatefulWidget which is a type of widget with some state. Flutter tracks changes to the state and redraws the widget when a new change in state is detected.
 
