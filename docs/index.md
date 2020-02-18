@@ -1,8 +1,8 @@
-## Primer to Flutter
+# Primer to Flutter
 
 In this blog post, we will explore the basics of cross platform mobile application development using <a href="https://flutter.dev" target="_blank">flutter</a>, explore how it compares to existing cross platform solutions and create a simple TODO application to demonstrate how to quickly build apps with flutter.
 
-### Brief introduction
+## Brief introduction
 
 Flutter is a free and open source UI toolkit for building natively compiled applications for mobile platforms like Android and iOS, and for web and desktop as well. Some of the prominent features are native performance, single codebase for multiple platforms, quick development and a wide range of beautifully designed widgets.
 
@@ -10,9 +10,15 @@ Flutter apps are written in dart programming language, which is a very intuitive
 
 Another interesting dart feature used in flutter apps is the just-in-time (JIT) compiler, used during development and debugging, which powers the hot reload functionality, and the ahead-of-time (AOT) compiler which is used when building applications for the target platforms such as Android or iOS, resulting in native performance.
 
-Everything composed on the screen with flutter is a widget including stuff like padding, alignment or opacity. The flutter engine draws and controls each pixel on the screen using it's own graphics engine called Skia. Also, flutter apps are truly native whereas react-native requires a javascript bridge to interact with native widgets.
+Everything composed on the screen with flutter is a widget including stuff like padding, alignment or opacity. The flutter engine draws and controls each pixel on the screen using it's own graphics engine called Skia. 
 
-### Getting started with a sample application
+Flutter apps are truly native and hence offer great performance whereas apps built with react-native requires a javascript bridge to interact with OEM widgets. Flutter apps are much faster to develop because of a wide range of built-in widgets, good amount of documentation, hot reload and several other developer friendly choices made by Google while building Dart and Flutter. React Native on the other hand has the advantage of being older and hence has a large community of businesses and developers who have experience building react-native apps. It also has more third party libraries and packages as compared to flutter. The said, flutter is catching up and rapidly gaining moment as evident from Stackoverflow's 2019 developer survey where it scored 75.4% under "Most Loved Framework, Libraries and Tools".
+
+<img src="so_dev_survey_2019.png" />
+
+All in all, flutter is great tool to have in your arsenal as a mobile developer in 2020.
+
+## Getting started with a sample application
 
 Flutter's official docs are really well written and include getting started guides for different OS platforms, API documentation, widget catalogue along with several cookbooks and codelabs that one can follow along to learn more about flutter.
 
@@ -69,11 +75,11 @@ class TodoListState extends State<TodoList> {
 }
 ```
 
-The `MyApp` class here, extends Stateless widget i.e. a widget without any state whereas TodoList extends StatefulWidget. All flutter apps are a combination of these two types of widgets. 
+The `MyApp` class here, extends Stateless widget i.e. a widget without any state whereas TodoList extends StatefulWidget. All flutter apps are a combination of these two types of widgets. StatelessWidgets must implement the `build()` method whereas Stateful widgets must implement the `createState()`.
 
-Some built-in widgets used here are the `MaterialApp` widget, the `Scaffold` widget and AppBar and Text widget. These are all imported from flutter's implementation of material design, available in the `material.dart` package.
+Some built-in widgets used here are the `MaterialApp` widget, the `Scaffold` widget and AppBar and Text widgets. These are all imported from flutter's implementation of material design, available in the `material.dart` package.
 
-Next, lets create a model class to store an individual todo item. We will keep this simple i.e. only store label and completed status of the todo item. 
+Next, lets create a model class that represents an individual todo item. We will keep this simple i.e. only store label and completed status of the todo item. 
 
 ```dart
 class Todo {
@@ -131,13 +137,15 @@ class TodoListState extends State<TodoList> {
 
 A few things to note here are: private functions start with an underscore, functions with a single line of body can be written using fat arrows (=>) and most importantly, to change the state of any variable contained in a Stateful widget, one must call the `setState` method.
 
+The `ListView.builder` constructor allows us to work with very large lists since list items are created only when they are scroll over.
+
 Another takeaway here is the fact that dart is such a intuitive language that it is quite easy to understand and start writing dart code immediately. 
 
 Everything composed on a screen with flutter is a widget including stuff like padding, alignment and opacity. Notice in the the code above, we have used `Padding` as a widget that wraps the list or a text widget depending on the number of todo items. If there's nothing in the list, a text widget is displayed with some default message.
 
 Also note how we haven't used `new` keyword when creating instances of a class, say `Text`. That's because using the `new` keyword is optional in dart and discouraged according to the <a href="https://dart.dev/guides/language/effective-dart/usage#dont-use-new">effective dart</a> guidelines.
 
-### Running & debugging
+## Running the application
 
 At this point, lets run the code and see how the app looks on a device. Press F5, then select a virtual device and wait for the app to get installed. If you haven't created a virtual device yet, refer the <a href="https://flutter.dev/docs/get-started/install" target="_blank">getting started</a> guide.
 
@@ -200,10 +208,11 @@ We used a few more built-in widgets here:
 - TextField: text input field for accepting user input
 - InputDecoration: a widget that adds style to the input field
 - FlatButton: a variation of button with no border or shadow
+- FloatingActionButton: a floating icon button, used to trigger primary action on the screen
 
-And this is how the application looks and behaves:
+Here's a quick preview of how the application should looks:
 
-<video style="max-width: 360px;"  src="run_project_ss3.webm" autoplay />
+<img style="max-width: 360px;" src="run_project_ss3.gif" />
 
 And just like that, in less than 100 lines of code, we've built the user interface of a simple, cross platform todo application implemented in flutter.
 
