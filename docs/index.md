@@ -1,12 +1,12 @@
 # Primer to Flutter
 
-In this blog post, we will explore the basics of cross platform mobile application development using <a href="https://flutter.dev" target="_blank">flutter</a>, explore how it compares to existing cross platform solutions and create a simple TODO application to demonstrate how to quickly build apps with flutter.
+In this blog post, we will explore the basics of cross platform mobile application development using <a href="https://flutter.dev" target="_blank">flutter</a>, evaluate how it compares to existing cross platform solutions and create a simple TODO application to demonstrate how to quickly build apps with flutter.
 
 ## Brief introduction
 
-Flutter is a free and open source UI toolkit for building natively compiled applications for mobile platforms like Android and iOS, and for web and desktop as well. Some of the prominent features are native performance, single codebase for multiple platforms, quick development and a wide range of beautifully designed widgets.
+Flutter is a free and open source UI toolkit for building natively compiled applications for mobile platforms like Android and iOS, and for the web and desktop as well. Some of the prominent features are native performance, single codebase for multiple platforms, quick development and a wide range of beautifully designed widgets.
 
-Flutter apps are written in dart programming language, which is a very intuitive language with a C-like syntax. Dart is optimized for performance and developer friendliness. Apps written in dart can be as fast as native applications because dart code compiles down to machine instructions for ARM and x64 processors and to Javascript for the web platform. This, along with the <a href="https://github.com/flutter/engine">flutter engine</a>, makes flutter apps platform agnostic.
+Flutter apps are written in dart programming language, which is a very intuitive language with a C-like syntax. Dart is optimized for performance and developer friendliness. Apps written in dart can be as fast as native applications because dart code compiles down to machine instructions for ARM and x64 processors and to Javascript for the web platform. This, along with the <a href="https://github.com/flutter/engine" target="_blank">flutter engine</a>, makes flutter apps platform agnostic.
 
 Another interesting dart feature used in flutter apps is the just-in-time (JIT) compiler, used during development and debugging, which powers the hot reload functionality, and the ahead-of-time (AOT) compiler which is used when building applications for the target platforms such as Android or iOS, resulting in native performance.
 
@@ -16,7 +16,7 @@ Flutter apps are truly native and hence offer great performance whereas apps bui
 
 <img src="so_dev_survey_2019.png" />
 
-All in all, flutter is great tool to have in your arsenal as a mobile developer in 2020.
+All in all, flutter is great tool to have in our arsenal as a mobile developers in 2020.
 
 ## Getting started with a sample application
 
@@ -77,7 +77,7 @@ class TodoListState extends State<TodoList> {
 
 The `MyApp` class here, extends Stateless widget i.e. a widget without any state whereas TodoList extends StatefulWidget. All flutter apps are a combination of these two types of widgets. StatelessWidgets must implement the `build()` method whereas Stateful widgets must implement the `createState()`.
 
-Some built-in widgets used here are the `MaterialApp` widget, the `Scaffold` widget and AppBar and Text widgets. These are all imported from flutter's implementation of material design, available in the `material.dart` package.
+Some built-in widgets used here are the `MaterialApp` widget, the `Scaffold` widget and AppBar and Text widgets. These are all imported from flutter's implementation of material design, available in the `material.dart` package. Similarly, to use native looking iOS widgets in applications, we can import widgets from the `flutter/cupertino.dart.` package.
 
 Next, lets create a model class that represents an individual todo item. We will keep this simple i.e. only store label and completed status of the todo item. 
 
@@ -216,9 +216,9 @@ Here's a quick preview of how the application should looks:
 
 And just like that, in less than 100 lines of code, we've built the user interface of a simple, cross platform todo application implemented in flutter.
 
-You can also find the code for this application at https://github.com/androidfanatic/simple_todo_flutter
+The source code for this application is available at: <a href="https://github.com/androidfanatic/simple_todo_flutter" target="_blank">https://github.com/androidfanatic/simple_todo_flutter</a>
 
-Some links to explore flutter further:
+Some resources links to explore flutter further:
 
-- Flutter docs: https://flutter.dev/docs
-- Dart packages: https://pub.dev/
+- <a href="https://flutter.dev/docs"  target="_blank">Flutter docs</a>
+- <a href="https://pub.dev/" target="_blank">Dart packages</a>
