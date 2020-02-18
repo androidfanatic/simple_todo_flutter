@@ -14,7 +14,7 @@ Everything composed on the screen with flutter is a widget including stuff like 
 
 Flutter apps are truly native and hence offer great performance whereas apps built with react-native requires a javascript bridge to interact with OEM widgets. Flutter apps are much faster to develop because of a wide range of built-in widgets, good amount of documentation, hot reload and several other developer friendly choices made by Google while building Dart and Flutter. React Native on the other hand has the advantage of being older and hence has a large community of businesses and developers who have experience building react-native apps. It also has more third party libraries and packages as compared to flutter. The said, flutter is catching up and rapidly gaining moment as evident from Stackoverflow's 2019 developer survey where it scored 75.4% under "Most Loved Framework, Libraries and Tools".
 
-<img src="so_dev_survey_2019.png" />
+<img style="max-width: 420px" src="so_dev_survey_2019.png" />
 
 All in all, flutter is great tool to have in our arsenal as mobile developers in 2020.
 
@@ -158,7 +158,7 @@ At this point, lets run the code and see how the app looks on a device. Press F5
 
 Once the virtual device launches, we should see the following screen in a while. During development, the first launch always takes a while because the entire app gets built and installed on the virtual device but subsequent changes to code are instantly reflected on the device thanks to flutter's amazing hot reload feature. This reduces development time and also allows developers and designers to experiment more frequently with the interface changes.
 
-<img style="max-width: 360px;" src="new_project_ss1.png" />
+<img style="max-width: 420px" src="new_project_ss1.png" />
 
 As we can see, there are no todos here yet. Now lets add a floating action button that opens a dialog which we will use to add new todo items.
 
@@ -217,7 +217,7 @@ We used a few more built-in widgets here:
 
 Here's a quick preview of how the application should looks:
 
-<img style="max-width: 360px;" src="run_project_ss3.gif" />
+<img style="max-width: 420px" src="run_project_ss3.gif" />
 
 And just like that, in less than 100 lines of code, we've built the user interface of a simple, cross platform todo application implemented in flutter.
 
