@@ -16,7 +16,7 @@ Flutter apps are truly native and hence offer great performance whereas apps bui
 
 <img src="so_dev_survey_2019.png" />
 
-All in all, flutter is great tool to have in our arsenal as a mobile developers in 2020.
+All in all, flutter is great tool to have in our arsenal as mobile developers in 2020.
 
 ## Getting started with a sample application
 
